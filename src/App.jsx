@@ -33,7 +33,7 @@ function App() {
       primaryText: "#959595",
       secondaryText: "#B57224",
       linGrad1: "#F5D061",
-      linGrad1: "#E48F04",
+      linGrad2: "#E48F04",
       tertiaryText: "#A5A5A5",
 
       // bgGradient: "transparent",
@@ -57,7 +57,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/profile" element={<MyProfile />}>
-              <Route path=":repoid" element={<Repo />} />
+              <Route path=":repoId" element={<Repo />} />
             </Route>
             <Route path="/contact" element={<Contact />} />
             <Route path="/err-boundary" element={<ErrorBoundaryTest />} />

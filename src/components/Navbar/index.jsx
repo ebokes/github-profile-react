@@ -28,7 +28,7 @@ const Navbar = () => {
               rounded
               label="Show menu"
               padding={0}
-              color="#000"
+              color="#959595"
             />
           </HamburgerStyle>
           <Menu isOpen={isOpen}>

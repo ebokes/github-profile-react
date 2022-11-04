@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const FooterContainer = styled.footer`
   /* background-color: ${({ theme }) => theme.color.secondary}; */
-  background-color: ${({ theme }) => theme.color.navfooter};
-  color: ${({ theme }) => theme.color.black};
+  background-color: ${({ theme }) => theme.color.fg};
+
   width: 100%;
   padding: 3rem 0 3rem 0;
   overflow: hidden;
@@ -14,6 +14,7 @@ export const FooterContainer = styled.footer`
     color: ${({ theme }) => theme.color.primary};
   }
 `;
+
 export const FooterContent = styled.div`
   max-width: 120rem;
   width: 90%;
@@ -21,5 +22,6 @@ export const FooterContent = styled.div`
 
   p {
     font-family: "Exo", sans-serif;
+    color: ${({ theme }) => theme.color.primaryText};
   }
 `;

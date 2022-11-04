@@ -21,6 +21,7 @@ class ErrorBoundaryTest extends React.Component {
     }
     return (
       <ErrorTestContainer>
+        <h2>This is a simulated ErrorBoundary page</h2>
         <h1>{this.state.counter}</h1>
         <button onClick={this.handleClick}>+</button>
         <p>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { HiLink } from "react-icons/hi";
 import { BsGithub } from "react-icons/bs";
 import { GrGroup } from "react-icons/gr";
@@ -6,24 +6,34 @@ import { GoLocation } from "react-icons/go";
 import axios from "axios";
 import Loader from "../../components/Loading";
 import {
+  ButtonGroup,
   CardBody,
   Col1,
-  Col2,
+  // Col2,
+  Next,
   OutletContainer,
+  Pagebtn,
+  Paginate,
+  Prev,
   ProfileCard,
   ProfileContainer,
   ProfileSection,
   RepoItem,
   RepoList,
   RepoOutlet,
+  Row1,
+  Row2,
   Stats,
   ViewProfile,
 } from "./styles";
 import { NavLink, Outlet } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const MyProfile = () => {
   const [data, setData] = useState([]);
   const [repos, setRepos] = useState([]);
+  const [page, setPage] = useState(1);
+  const ref = useRef(null);
 
   useEffect(() => {
     const apiCall = setTimeout(() => {
@@ -36,23 +46,35 @@ const MyProfile = () => {
     }, 1500);
     return () => clearTimeout(apiCall);
   }, []);
-  // console.log(data);
-  // console.log(repos);
+
+  const PER_PAGE = 5;
+  const total = repos?.length;
+  const pages = Math.ceil(total / PER_PAGE);
+  const skip = page * PER_PAGE - PER_PAGE;
 
   return (
     <ProfileSection>
       <ProfileContainer>
-        <h1>My GitHub Profile</h1>
         {/* Loader animation data control  */}
+        <Helmet>
+          <title>Chibuokem's Github Profile</title>
+          <meta
+            name="description"
+            content="Github Repositories of Chibuokem Egbuchulam"
+          />
+          <link rel="canonical" href="/profile" />
+        </Helmet>
         {data.length !== 0 ? (
           <>
-            <ProfileCard>
-              <Col1>
-                <img alt="avatar" src={data.avatar_url} />
-              </Col1>
-              <Col2>
+            <Row1>
+              <h1>My GitHub Profile</h1>
+              <ProfileCard>
+                <Col1>
+                  <img alt="avatar" src={data.avatar_url} />
+                </Col1>
+                {/* <Col2> */}
                 <CardBody>
-                  <h1>{data.name}</h1>
+                  <h2>{data.name}</h2>
                   <br />
                   <p>@{data.login}</p>
                   <br />
@@ -88,7 +110,10 @@ const MyProfile = () => {
                       href="https://github.com/ebokes?tab=repositories"
                       target="_blank"
                     >
-                      <p>Repos: {data.public_repos}</p>
+                      <p>
+                        <span>Repos:</span>
+                        <span>{data.public_repos}</span>
+                      </p>
                     </a>
                   </div>
                   <div>
@@ -96,7 +121,9 @@ const MyProfile = () => {
                       href="https://github.com/ebokes?tab=followers"
                       target="_blank"
                     >
-                      <p>Followers: {data.followers} </p>
+                      <p>
+                        <span>Followers</span> <span>{data.followers}</span>
+                      </p>
                     </a>
                   </div>
                   <div>
@@ -104,38 +131,85 @@ const MyProfile = () => {
                       href="https://github.com/ebokes?tab=following"
                       target="_blank"
                     >
-                      <p>Following: {data.following}</p>
+                      <p>
+                        <span>Following</span> <span>{data.following}</span>
+                      </p>
                     </a>
                   </div>
                 </Stats>
-              </Col2>
-            </ProfileCard>
-            <h1>Repositories</h1>
-            <OutletContainer>
-              <RepoList>
-                <div>
-                  {repos.map((item) => (
-                    <RepoItem key={item.id}>
-                      <NavLink
-                        to={`/profile/${item.name}`}
-                        className={({ isActive }) =>
-                          isActive ? "active" : "normal"
-                        }
-                      >
-                        {item.name}
-                      </NavLink>
-                    </RepoItem>
-                  ))}
-                </div>
-              </RepoList>
-              <RepoOutlet>
-                <Outlet />
-              </RepoOutlet>
-            </OutletContainer>
+                {/* </Col2> */}
+              </ProfileCard>
+            </Row1>
+            <Row2>
+              <OutletContainer>
+                <RepoList>
+                  <div>
+                    <h2>Repositories</h2>
+                    {repos?.slice(skip, skip + PER_PAGE).map((item) => (
+                      <RepoItem key={item.id}>
+                        <NavLink
+                          to={`/profile/${item.id}`}
+                          className={({ isActive }) =>
+                            isActive ? "active" : "normal"
+                          }
+                        >
+                          {item.name}
+                        </NavLink>
+                      </RepoItem>
+                    ))}
+                  </div>
+                </RepoList>
+                <RepoOutlet>
+                  <Outlet />
+                </RepoOutlet>
+              </OutletContainer>
+            </Row2>
           </>
         ) : (
           <Loader />
         )}
+        <Paginate>
+          <div>
+            Pages: {page} of {pages}
+          </div>
+
+          <ButtonGroup>
+            <Prev
+              disabled={page <= 1}
+              onClick={() => {
+                setPage((prev) => prev - 1);
+                ref.current?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              prev
+            </Prev>
+
+            {Array.from({ length: pages }, (value, index) => index + 1).map(
+              (repo) => (
+                <Pagebtn
+                  // style={{ color: page === pages && "red" }}
+                  key={repo}
+                  onClick={() => {
+                    setPage(repo);
+                    ref.current?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  {repo}
+                </Pagebtn>
+              )
+            )}
+            <Next
+              disabled={page >= pages}
+              aria-disabled={page >= pages}
+              onClick={() => {
+                setPage((prev) => prev + 1);
+                ref.current?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              next
+            </Next>
+          </ButtonGroup>
+        </Paginate>
       </ProfileContainer>
     </ProfileSection>
   );

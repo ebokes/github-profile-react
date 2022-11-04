@@ -8,11 +8,11 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${({ theme }) => theme.color.navfooter};
+  background-color: ${({ theme }) => theme.color.fg};
   box-shadow: 0 0;
-  border-bottom: 0.1rem solid ${({ theme }) => theme.color.main};
+  border-bottom: 0.1rem solid ${({ theme }) => theme.color.secondaryText};
 
-  @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
+  @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
     height: 6.5rem;
   }
 `;
@@ -42,26 +42,16 @@ export const Logo = styled(NavLink)`
   }
 
   h2 {
-    /* text-transform: uppercase; */
-    color: ${({ theme }) => theme.color.main};
-    /* border-top: 0.2rem solid ${({ theme }) => theme.color.black};
-    border-bottom: 0.2rem solid ${({ theme }) => theme.color.black}; */
-
-    span {
-      color: ${({ theme }) => theme.color.primary};
-    }
+    color: ${({ theme }) => theme.color.primaryText};
   }
 `;
 
 export const Menu = styled.ul`
   display: none;
-  /* text-transform: uppercase; */
   z-index: 20;
-  /* margin-right: 5%; */
 
   .normal {
-    /* color: ${({ theme }) => theme.color.white}; */
-    color: ${({ theme }) => theme.color.main};
+    color: ${({ theme }) => theme.color.primaryText};
     display: flex;
     transition: all 0.4s;
     position: relative;
@@ -72,10 +62,10 @@ export const Menu = styled.ul`
     font-size: 1.8rem;
 
     :hover {
-      /* color: ${({ theme }) => theme.color.black}; */
+      color: ${({ theme }) => theme.color.secondaryText};
 
       @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
-        /* color: #000; */
+        color: ${({ theme }) => theme.color.primaryText};
       }
     }
 
@@ -84,7 +74,7 @@ export const Menu = styled.ul`
       width: 100%;
       height: 0.2rem;
       border-radius: 50%;
-      background-color: ${({ theme }) => theme.color.main};
+      background-color: ${({ theme }) => theme.color.secondaryText};
       position: absolute;
       bottom: 0;
       left: 0;
@@ -94,17 +84,17 @@ export const Menu = styled.ul`
 
     &:hover::before {
       transform: scaleX(1);
-      background-color: ${({ theme }) => theme.color.main};
+      background-color: ${({ theme }) => theme.color.SecondaryText};
 
       @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
         transform: scaleX(0);
-        color: ${({ theme }) => theme.color.black};
+        color: transparent;
       }
     }
   }
 
   .active {
-    color: ${({ theme }) => theme.color.main};
+    color: ${({ theme }) => theme.color.secondaryText};
     display: flex;
     transition: all 0.4s;
     position: relative;
@@ -115,10 +105,9 @@ export const Menu = styled.ul`
     font-size: 1.8rem;
 
     :hover {
-      color: ${({ theme }) => theme.color.main};
+      color: ${({ theme }) => theme.color.secondaryText};
 
       @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
-        /* color: #000; */
       }
     }
 
@@ -132,7 +121,7 @@ export const Menu = styled.ul`
       left: 0;
       transition: transform 250ms ease-in;
       transform: scaleX(1);
-      background-color: ${({ theme }) => theme.color.main};
+      background-color: ${({ theme }) => theme.color.secondaryText};
 
       @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
         transform: scaleX(0);
@@ -149,7 +138,7 @@ export const Menu = styled.ul`
     position: absolute;
     top: 6.2rem;
     right: 0;
-    background-color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.fg};
     padding-left: 2rem;
     height: 100vh;
     animation: slideOut 0.5s ease-in;

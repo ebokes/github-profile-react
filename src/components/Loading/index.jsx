@@ -1,16 +1,16 @@
 import React from "react";
-import spinner from "../../assets/spinner.gif";
+import spinner from "../../assets/spinner4.gif";
 
 const Loading = () => {
   const style = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: "100vh",
+    height: "80vh",
   };
 
   const imgStyle = {
-    width: "5rem",
+    width: "9rem",
   };
 
   return (
