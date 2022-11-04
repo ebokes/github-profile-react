@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container, Section } from "../../components/reuseable";
+import { Btn, Container, Section } from "../../components/reuseable";
 import bg from "../../assets/bg5.jpg";
 
 export const ProfileSection = styled(Section)`
@@ -7,6 +7,8 @@ export const ProfileSection = styled(Section)`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  min-height: calc(100vh - 7.85rem);
+  margin-bottom: -7.85rem;
 `;
 
 export const ProfileContainer = styled(Container)`
@@ -16,6 +18,7 @@ export const ProfileContainer = styled(Container)`
 export const Row1 = styled.div`
   background-color: ${({ theme }) => theme.color.fg};
   padding: 3rem 0;
+  border: 1px solid #333;
 
   & > h1 {
     text-align: center;
@@ -26,54 +29,115 @@ export const Row1 = styled.div`
 `;
 
 export const ProfileCard = styled.div`
-  margin: 0 auto 3rem auto;
+  margin: 0 auto;
   display: flex;
   gap: 2rem;
-  padding: 3rem 0;
-  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  padding: 3rem 2rem;
   background-color: ${({ theme }) => theme.color.fg};
   color: ${({ theme }) => theme.color.primaryText};
+  width: 80rem;
+  height: 28rem;
+
+  @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
+    flex-direction: column;
+    justify-content: center;
+  }
+`;
+
+export const ColGroup = styled.div`
+  display: flex;
+  gap: 3rem;
+  width: 90%;
+  align-items: flex-start;
+  height: 100%;
+
+  @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
+    width: 100%;
+  }
 `;
 
 export const Col1 = styled.div`
   width: 30%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   /* color: ${({ theme }) => theme.color.main}; */
-  font-family: "Montserrat", sans-serif;
+  font-family: ${({ theme }) => theme.font.font3};
+  gap: 3rem;
 
-  span {
+  img {
+    /* max-width: 100%; */
+    border-radius: 2rem;
+    width: 25rem;
+  }
+`;
+
+export const Col2 = styled.div`
+  width: 60%;
+  font-family: ${({ theme }) => theme.font.font3};
+  gap: 1rem;
+
+  & > div {
+    &:first-child {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  & > span {
     display: flex;
     align-items: center;
     gap: 0.3rem;
-  }
+    margin-top: 1rem;
 
-  img {
-    border-radius: 5rem;
-    width: 20rem;
+    & > a {
+      color: ${({ theme }) => theme.color.primaryText};
+    }
   }
 
   h1 {
     margin: 1rem 0;
   }
+
+  p {
+    margin: 1rem 0;
+  }
 `;
 
-export const CardBody = styled.div`
-  width: 50%;
-  /* color: ${({ theme }) => theme.color.main}; */
-  font-family: "Montserrat", sans-serif;
-
-  a {
-    display: inline-block;
-  }
+export const ProfileBtnGroup = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 2rem 0 0 0;
+  gap: 2rem;
 `;
 
 export const ViewProfile = styled.a`
   background-color: #000;
   color: #f4f4f4;
   padding: 0.5rem 1rem;
+  background: linear-gradient(
+    to right,
+    ${({ theme }) => theme.color.linGrad1},
+    ${({ theme }) => theme.color.linGrad2}
+  );
+  color: ${({ theme }) => theme.color.bgGradient};
+  padding: 0.7rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 600;
+  font-size: 1.6rem;
+  font-family: "Exo", sans-serif;
+  transition: all 0.5s;
+
+  :active {
+    transform: translateY(3px);
+  }
 
   & > span {
     display: flex;
@@ -82,49 +146,42 @@ export const ViewProfile = styled.a`
   }
 `;
 
-export const Col2 = styled.div`
+export const RepoToggleBtn = styled(Btn)``;
+
+export const Col3 = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
-
-  a {
-    font-family: "Montserrat", sans-serif;
-    display: inline-block;
-    word-wrap: break-word;
-  }
-`;
-
-export const Stats = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 10rem;
+  width: 10%;
   justify-content: space-between;
   margin-top: 2rem;
+  text-align: center;
 
   div {
-    /* background-color: #f4f4f4; */
-    padding: 1rem;
-    border-radius: 50%;
+    /* padding: 1rem; */
+    /* background: linear-gradient(135deg, #f5d061, #e48f04); */
+    /* padding: 0.5rem 1rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.3rem;
 
     a {
-      font-family: "Montserrat", sans-serif;
-      color: ${({ theme }) => theme.color.primaryText};
-      /* padding: 1rem; */
-      /* background-color: #f4f4f4; */
-      font-size: 1.4rem;
-      /* width: 10rem; */
+      font-family: ${({ theme }) => theme.font.font3};
+      color: ${({ theme }) => theme.color.secondaryText};
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
     }
     p {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      span {
-        &:first-child {
-          font-size: 1.7rem;
-        }
-      }
+
+      font-size: 1.5rem;
+      width: 10rem;
     }
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
+    flex-direction: row;
   }
 `;
 
@@ -145,7 +202,7 @@ export const RepoItem = styled.div`
 
   a {
     color: ${({ theme }) => theme.color.primaryText};
-    font-family: "Montserrat", sans-serif;
+    font-family: ${({ theme }) => theme.font.font3};
   }
 
   .normal {
@@ -182,7 +239,7 @@ export const RepoItem = styled.div`
 `;
 
 export const Row2 = styled.div`
-  font-family: "Montserrat", sans-serif;
+  font-family: ${({ theme }) => theme.font.font3};
   color: ${({ theme }) => theme.color.primaryText};
   /* background-color: ${({ theme }) => theme.color.fg}; 
   */
@@ -209,8 +266,8 @@ export const Paginate = styled.div`
   flex-direction: column;
   align-items: center;
   color: #fff;
-  margin-top: 3rem;
-  font-family: "Montserrat", sans-serif;
+  margin: 3rem 0;
+  font-family: ${({ theme }) => theme.font.font3};
 `;
 
 export const ButtonGroup = styled.div`

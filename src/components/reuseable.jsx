@@ -26,13 +26,10 @@ export const LinkBtn = styled(NavLink)`
   font-weight: 600;
   font-size: 1.6rem;
   font-family: "Exo", sans-serif;
+  transition: all 0.5s;
 
   :active {
-    background: linear-gradient(
-      45deg,
-      ${({ theme }) => theme.color.linGrad2},
-      ${({ theme }) => theme.color.linGrad1}
-    );
+    transform: translateY(3px);
   }
 `;
 export const Btn = styled.button`
@@ -49,12 +46,9 @@ export const Btn = styled.button`
   font-size: 1.6rem;
   font-family: "Exo", sans-serif;
   cursor: pointer;
+  transition: all 0.5s;
 
   :active {
-    background: linear-gradient(
-      45deg,
-      ${({ theme }) => theme.color.linGrad2},
-      ${({ theme }) => theme.color.linGrad1}
-    );
+    transform: translateY(3px);
   }
 `;

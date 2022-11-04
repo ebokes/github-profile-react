@@ -40,7 +40,7 @@ function App() {
     font: {
       font1: `"Exo", sans-serif`,
       font2: ` "Rajdhani", sans-serif`,
-      // font3:"",
+      font3: `"Montserrat", sans-serif`,
     },
 
     screens: {

@@ -18,6 +18,7 @@ export const FooterContent = styled.div`
   max-width: 120rem;
   width: 90%;
   margin: 0 auto;
+  text-align: center;
 
   p {
     font-family: "Exo", sans-serif;
