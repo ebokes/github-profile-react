@@ -18,7 +18,7 @@ const Navbar = () => {
       <Header>
         <NavContainer>
           <Logo to="/">
-            <h2>Github Profile Lookup</h2>
+            <h2>Github Portfolio</h2>
           </Logo>
           <HamburgerStyle>
             <Hamburger
@@ -42,7 +42,7 @@ const Navbar = () => {
                 Home
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink
                 onClick={handleClose}
                 to="/about"
@@ -50,7 +50,7 @@ const Navbar = () => {
               >
                 About
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink
                 onClick={handleClose}
@@ -60,7 +60,7 @@ const Navbar = () => {
                 My Profile
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink
                 onClick={handleClose}
                 to="/search"
@@ -68,7 +68,7 @@ const Navbar = () => {
               >
                 Search User
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink
                 onClick={handleClose}

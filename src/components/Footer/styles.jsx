@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.footer`
-  /* background-color: ${({ theme }) => theme.color.secondary}; */
   background-color: ${({ theme }) => theme.color.fg};
 
   width: 100%;

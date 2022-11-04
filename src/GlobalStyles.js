@@ -34,6 +34,10 @@ body{
     /* font-family: "Mulish", sans-serif; */
     font-size: 1.6rem;
     /* background-color: #0a192f; */
+    /* position: relative; */
+    /* min-height: calc(100vh - 78.5px); */
+    /* height: 100%;
+    margin: 0; */
 }
 
 ul{

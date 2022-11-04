@@ -1,22 +1,12 @@
 import React from "react";
 import spinner from "../../assets/spinner4.gif";
+import { LoadingContainer } from "./styles";
 
 const Loading = () => {
-  const style = {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "80vh",
-  };
-
-  const imgStyle = {
-    width: "9rem",
-  };
-
   return (
-    <div style={style}>
-      <img style={imgStyle} src={spinner} alt="loading" />
-    </div>
+    <LoadingContainer>
+      <img src={spinner} alt="loading" />
+    </LoadingContainer>
   );
 };
 

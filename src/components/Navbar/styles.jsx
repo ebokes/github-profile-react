@@ -4,12 +4,10 @@ import styled from "styled-components";
 export const Header = styled.header`
   width: 100%;
   height: 8.2rem;
-  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: ${({ theme }) => theme.color.fg};
-  box-shadow: 0 0;
   border-bottom: 0.1rem solid ${({ theme }) => theme.color.secondaryText};
 
   @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
@@ -34,15 +32,10 @@ export const Logo = styled(NavLink)`
   /* width: 7rem; */
   height: 3.5rem;
 
-  font-family: "Exo", sans-serif;
-  font-weight: 600;
-
-  @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
-    margin-left: 2.5%;
-  }
-
   h2 {
     color: ${({ theme }) => theme.color.primaryText};
+    font-family: "Exo", sans-serif;
+    font-weight: 600;
   }
 `;
 

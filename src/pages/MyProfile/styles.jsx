@@ -1,8 +1,12 @@
 import styled from "styled-components";
 import { Container, Section } from "../../components/reuseable";
+import bg from "../../assets/bg5.jpg";
 
 export const ProfileSection = styled(Section)`
-  background-color: ${({ theme }) => theme.color.bg};
+  background: linear-gradient(135deg, #00000093, #000000a9), url("${bg}");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 `;
 
 export const ProfileContainer = styled(Container)`
@@ -12,11 +16,11 @@ export const ProfileContainer = styled(Container)`
 export const Row1 = styled.div`
   background-color: ${({ theme }) => theme.color.fg};
   padding: 3rem 0;
+
   & > h1 {
     text-align: center;
-    font-family: "Exo", sans-serif;
-    /* margin-bottom: 2rem; */
     font-size: 3rem;
+    font-family: ${({ theme }) => theme.font.font1};
     color: ${({ theme }) => theme.color.primaryText};
   }
 `;
@@ -151,7 +155,7 @@ export const RepoItem = styled.div`
     position: relative;
     padding-bottom: 0.3rem;
     transition: all 0.2s ease-in-out;
-    font-family: "Exo", sans-serif;
+    font-family: ${({ theme }) => theme.color.primaryText};
     font-weight: 600;
     font-size: 1.8rem;
 
@@ -171,7 +175,7 @@ export const RepoItem = styled.div`
     position: relative;
     padding-bottom: 0.3rem;
     transition: all 0.5s ease-in-out;
-    font-family: "Exo", sans-serif;
+    font-family: ${({ theme }) => theme.color.primaryText};
     font-weight: 600;
     font-size: 1.8rem;
   }

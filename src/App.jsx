@@ -8,7 +8,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Repo from "./components/Repo";
-import About from "./pages/About";
+// import About from "./pages/About";
 import Contact from "./pages/Contact";
 import MyProfile from "./pages/MyProfile";
 import ErrorPage from "./pages/Error/ErrorPage";
@@ -26,17 +26,21 @@ function App() {
       transparent: "transparent",
       main: "#0898a0",
       navfooter: "#fff",
-      bgGradient: "#002727ab",
+      bgGradient: "#333333",
 
       bg: "#000",
       fg: "#1C1C1C",
-      primaryText: "#959595",
+      primaryText: "#b1b1b1",
       secondaryText: "#B57224",
-      linGrad1: "#F5D061",
-      linGrad2: "#E48F04",
       tertiaryText: "#A5A5A5",
+      linGrad1: "#f5d061",
+      linGrad2: "#e48f04",
+    },
 
-      // bgGradient: "transparent",
+    font: {
+      font1: `"Exo", sans-serif`,
+      font2: ` "Rajdhani", sans-serif`,
+      // font3:"",
     },
 
     screens: {
@@ -55,7 +59,8 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+
+            {/* <Route path="/about" element={<About />} /> */}
             <Route path="/profile" element={<MyProfile />}>
               <Route path=":repoId" element={<Repo />} />
             </Route>

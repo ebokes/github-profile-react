@@ -1,12 +1,12 @@
 import React from "react";
 import { Container } from "../../components/reuseable";
 import {
-  Btn,
   ContactSection,
   ContactWrapper,
   Heading,
   InputWrapper,
   MessageStyle,
+  SubmitBtn,
 } from "./styles";
 
 const Contact = () => {
@@ -16,7 +16,7 @@ const Contact = () => {
         <ContactWrapper>
           <Heading>
             <h1>Feel Free Contact</h1>
-            <h1>Us Now</h1>
+            <h1>Me Now</h1>
           </Heading>
           <form>
             <InputWrapper>
@@ -39,7 +39,7 @@ const Contact = () => {
                 required
               />
             </MessageStyle>
-            <Btn type="submit">Submit</Btn>
+            <SubmitBtn type="submit">Submit</SubmitBtn>
           </form>
         </ContactWrapper>
       </Container>

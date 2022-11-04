@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Section = styled.section`
@@ -11,4 +12,49 @@ export const Container = styled.div`
   max-width: 120rem;
   width: 90%;
   margin: 0 auto;
+`;
+export const LinkBtn = styled(NavLink)`
+  background: linear-gradient(
+    to right,
+    ${({ theme }) => theme.color.linGrad1},
+    ${({ theme }) => theme.color.linGrad2}
+  );
+  color: ${({ theme }) => theme.color.bgGradient};
+  padding: 0.7rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 600;
+  font-size: 1.6rem;
+  font-family: "Exo", sans-serif;
+
+  :active {
+    background: linear-gradient(
+      45deg,
+      ${({ theme }) => theme.color.linGrad2},
+      ${({ theme }) => theme.color.linGrad1}
+    );
+  }
+`;
+export const Btn = styled.button`
+  background: linear-gradient(
+    to right,
+    ${({ theme }) => theme.color.linGrad1},
+    ${({ theme }) => theme.color.linGrad2}
+  );
+  color: ${({ theme }) => theme.color.bgGradient};
+  padding: 0.7rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 600;
+  font-size: 1.6rem;
+  font-family: "Exo", sans-serif;
+  cursor: pointer;
+
+  :active {
+    background: linear-gradient(
+      45deg,
+      ${({ theme }) => theme.color.linGrad2},
+      ${({ theme }) => theme.color.linGrad1}
+    );
+  }
 `;

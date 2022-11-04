@@ -6,8 +6,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <p>
-          © Copyright Chibu 2022 All Rights Reserved. Built by Chibuokem
-          Egbuchulam
+          Copyright © 2022, All Rights Reserved. Built by Chibuokem Egbuchulam
         </p>
       </FooterContent>
     </FooterContainer>

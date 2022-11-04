@@ -55,7 +55,6 @@ const MyProfile = () => {
   return (
     <ProfileSection>
       <ProfileContainer>
-        {/* Loader animation data control  */}
         <Helmet>
           <title>Chibuokem's Github Profile</title>
           <meta
@@ -64,6 +63,7 @@ const MyProfile = () => {
           />
           <link rel="canonical" href="/profile" />
         </Helmet>
+        {/* Loader animation data control  */}
         {data.length !== 0 ? (
           <>
             <Row1>
@@ -164,52 +164,52 @@ const MyProfile = () => {
                 </RepoOutlet>
               </OutletContainer>
             </Row2>
+            <Paginate>
+              <div>
+                Pages: {page} of {pages}
+              </div>
+
+              <ButtonGroup>
+                <Prev
+                  disabled={page <= 1}
+                  onClick={() => {
+                    setPage((prev) => prev - 1);
+                    ref.current?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  prev
+                </Prev>
+
+                {Array.from({ length: pages }, (value, index) => index + 1).map(
+                  (repo) => (
+                    <Pagebtn
+                      // style={{ color: page === pages && "red" }}
+                      key={repo}
+                      onClick={() => {
+                        setPage(repo);
+                        ref.current?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                    >
+                      {repo}
+                    </Pagebtn>
+                  )
+                )}
+                <Next
+                  disabled={page >= pages}
+                  aria-disabled={page >= pages}
+                  onClick={() => {
+                    setPage((prev) => prev + 1);
+                    ref.current?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  next
+                </Next>
+              </ButtonGroup>
+            </Paginate>
           </>
         ) : (
           <Loader />
         )}
-        <Paginate>
-          <div>
-            Pages: {page} of {pages}
-          </div>
-
-          <ButtonGroup>
-            <Prev
-              disabled={page <= 1}
-              onClick={() => {
-                setPage((prev) => prev - 1);
-                ref.current?.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              prev
-            </Prev>
-
-            {Array.from({ length: pages }, (value, index) => index + 1).map(
-              (repo) => (
-                <Pagebtn
-                  // style={{ color: page === pages && "red" }}
-                  key={repo}
-                  onClick={() => {
-                    setPage(repo);
-                    ref.current?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                >
-                  {repo}
-                </Pagebtn>
-              )
-            )}
-            <Next
-              disabled={page >= pages}
-              aria-disabled={page >= pages}
-              onClick={() => {
-                setPage((prev) => prev + 1);
-                ref.current?.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              next
-            </Next>
-          </ButtonGroup>
-        </Paginate>
       </ProfileContainer>
     </ProfileSection>
   );

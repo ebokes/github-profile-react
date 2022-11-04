@@ -1,7 +1,10 @@
 import styled from "styled-components";
+import { Btn } from "../../components/reuseable";
+import bg from "../../assets/bg7.jpg";
 
 export const Error = styled.section`
   height: 100vh;
+
   /* margin-top: 30rem; */
 
   h2 {
@@ -23,14 +26,28 @@ export const Heading = styled.h1`
 `;
 
 export const ErrorTestContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 40rem;
-  gap: 3rem;
-  font-family: "Exo", sans-serif;
+  background: linear-gradient(135deg, #000000e3, #0000005e), url("${bg}");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40rem;
+    gap: 3rem;
+    font-family: "Exo", sans-serif;
+    color: ${({ theme }) => theme.color.white};
+    min-height: calc(100vh - 7.85rem);
+    margin-bottom: -7.85rem;
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
 
   h1 {
     font-size: 5rem;
@@ -38,11 +55,15 @@ export const ErrorTestContainer = styled.div`
 
   button {
     /* width: 5rem; */
-    padding: 1rem 4rem;
-    background-color: ${({ theme }) => theme.color.main};
-    color: ${({ theme }) => theme.color.white};
-    font-size: 2rem;
-    border-radius: 1rem;
+    /* padding: 1rem 4rem; */
+    /* color: ${({ theme }) => theme.color.white}; */
+    /* font-size: 2rem; */
+    /* border-radius: 1rem; */
     /* border: 1px solid ${({ theme }) => theme.color.white}; */
   }
+`;
+
+export const IncrementBtn = styled(Btn)`
+  padding: 0.7rem 3rem;
+  color: ${({ theme }) => theme.color.white};
 `;
