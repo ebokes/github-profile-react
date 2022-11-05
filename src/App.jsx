@@ -26,15 +26,16 @@ function App() {
       transparent: "transparent",
       main: "#0898a0",
       navfooter: "#fff",
-      bgGradient: "#333333",
 
-      bg: "#000",
-      fg: "#1C1C1C",
       primaryText: "#b1b1b1",
       secondaryText: "#B57224",
-      tertiaryText: "#A5A5A5",
+      tertiaryText: "#e5e5e5",
       linGrad1: "#f5d061",
       linGrad2: "#e48f04",
+      bgGradient: "#333333",
+      bg: "#000",
+      fg: "#1C1C1C",
+      bg2: "#141414",
     },
 
     font: {

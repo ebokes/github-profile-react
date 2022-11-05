@@ -24,89 +24,81 @@ export const Row1 = styled.div`
     text-align: center;
     font-size: 3rem;
     font-family: ${({ theme }) => theme.font.font1};
-    color: ${({ theme }) => theme.color.primaryText};
+    color: ${({ theme }) => theme.color.tertiaryText};
+    margin-bottom: 2rem;
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
+    margin-bottom: 5rem;
   }
 `;
 
 export const ProfileCard = styled.div`
-  margin: 0 auto;
   display: flex;
-  gap: 2rem;
-  padding: 3rem 2rem;
-  background-color: ${({ theme }) => theme.color.fg};
-  color: ${({ theme }) => theme.color.primaryText};
-  width: 80rem;
-  height: 28rem;
-
-  @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
-    flex-direction: column;
-    justify-content: center;
-  }
-`;
-
-export const ColGroup = styled.div`
-  display: flex;
-  gap: 3rem;
   width: 90%;
+  gap: 2rem;
+  justify-content: center;
   align-items: flex-start;
-  height: 100%;
+  margin: 0 auto;
 
-  @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
-    width: 100%;
+  @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
+    flex-direction: column;
   }
 `;
 
 export const Col1 = styled.div`
-  width: 30%;
+  width: 50%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  /* color: ${({ theme }) => theme.color.main}; */
-  font-family: ${({ theme }) => theme.font.font3};
-  gap: 3rem;
+  justify-content: center;
 
-  img {
-    /* max-width: 100%; */
-    border-radius: 2rem;
-    width: 25rem;
+  div {
+    width: 80%;
+    & > img {
+      max-width: 100%;
+      border-radius: 1rem;
+      height: auto;
+    }
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
+    width: 100%;
+    margin: 0 auto;
   }
 `;
 
 export const Col2 = styled.div`
-  width: 60%;
+  width: 50%;
   font-family: ${({ theme }) => theme.font.font3};
-  gap: 1rem;
-
-  & > div {
-    &:first-child {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-  }
-
-  a {
-    display: inline-block;
-  }
+  color: ${({ theme }) => theme.color.primaryText};
 
   & > span {
+    margin-bottom: 1rem;
     display: flex;
-    align-items: center;
     gap: 0.3rem;
-    margin-top: 1rem;
+
+    & > h2 {
+      & > p {
+        font-size: 1.7rem;
+        font-weight: 500;
+      }
+    }
+
+    &:first-child {
+      gap: 1rem;
+      align-items: center;
+    }
 
     & > a {
       color: ${({ theme }) => theme.color.primaryText};
+
+      &:hover {
+        color: ${({ theme }) => theme.color.secondaryText};
+      }
     }
   }
 
-  h1 {
-    margin: 1rem 0;
-  }
-
-  p {
-    margin: 1rem 0;
+  @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
+    width: 100%;
   }
 `;
 
@@ -115,6 +107,10 @@ export const ProfileBtnGroup = styled.div`
   align-items: center;
   margin: 2rem 0 0 0;
   gap: 2rem;
+
+  @media screen and (max-width: ${({ theme }) => theme.screens.xsm}) {
+    flex-direction: column;
+  }
 `;
 
 export const ViewProfile = styled.a`
@@ -148,73 +144,75 @@ export const ViewProfile = styled.a`
 
 export const RepoToggleBtn = styled(Btn)``;
 
-export const Col3 = styled.div`
+export const Stats = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 10%;
-  justify-content: space-between;
+  gap: 1rem;
   margin-top: 2rem;
-  text-align: center;
+  flex-wrap: wrap;
 
-  div {
-    /* padding: 1rem; */
-    /* background: linear-gradient(135deg, #f5d061, #e48f04); */
-    /* padding: 0.5rem 1rem; */
-    display: flex;
-    align-items: center;
+  @media screen and (max-width: ${({ theme }) => theme.screens.xsm}) {
     justify-content: center;
-    border-radius: 0.3rem;
+  }
 
-    a {
-      font-family: ${({ theme }) => theme.font.font3};
+  & > div {
+    /* text-align: center; */
+    border: 1px solid ${({ theme }) => theme.color.secondaryText};
+    border-radius: 0.5rem;
+    display: inline-flex;
+    justify-content: center;
+    width: 11rem;
+
+    & > a {
       color: ${({ theme }) => theme.color.secondaryText};
       display: flex;
-      flex-direction: column-reverse;
-      justify-content: center;
-    }
-    p {
+      gap: 0.4rem;
       align-items: center;
+      padding: 0.5rem;
+    }
+  }
+`;
 
-      font-size: 1.5rem;
-      width: 10rem;
+export const Left = styled.div`
+  width: 32%;
+  border: 1px solid #333;
+  background-color: ${({ theme }) => theme.color.fg};
+  & > div {
+    h2 {
+      padding: 1rem;
+      color: ${({ theme }) => theme.color.tertiaryText};
     }
   }
 
-  @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
-    flex-direction: row;
+  @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
+    width: 100%;
   }
 `;
 
 export const RepoList = styled.div`
-  width: 30%;
-
-  h2 {
-    background-color: ${({ theme }) => theme.color.fg};
-    padding: 2rem 1rem;
+  @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
+    display: flex;
+    flex-wrap: wrap;
   }
 `;
 
 export const RepoItem = styled.div`
-  padding: 1.5rem 1rem;
-  border: 1px solid #333;
-  min-width: 30rem;
-  background-color: ${({ theme }) => theme.color.fg};
-
-  a {
-    color: ${({ theme }) => theme.color.primaryText};
-    font-family: ${({ theme }) => theme.font.font3};
-  }
-
   .normal {
     color: ${({ theme }) => theme.color.primaryText};
     display: flex;
     transition: all 0.4s;
     position: relative;
-    padding-bottom: 0.3rem;
     transition: all 0.2s ease-in-out;
     font-family: ${({ theme }) => theme.color.primaryText};
     font-weight: 600;
     font-size: 1.8rem;
+    background-color: ${({ theme }) => theme.color.fg};
+    border: 1px solid #333;
+    padding: 1.5rem 1rem;
+    width: 100%;
+
+    @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
+      width: fit-content;
+    }
 
     :hover {
       color: ${({ theme }) => theme.color.secondaryText};
@@ -230,36 +228,47 @@ export const RepoItem = styled.div`
     display: flex;
     transition: all 0.4s;
     position: relative;
-    padding-bottom: 0.3rem;
     transition: all 0.5s ease-in-out;
     font-family: ${({ theme }) => theme.color.primaryText};
     font-weight: 600;
     font-size: 1.8rem;
+    background: linear-gradient(90deg, #141414 5.67%, #1c1c1c 100%);
+    border: 1px solid #333;
+    padding: 1.5rem 1rem;
+    width: 100%;
+
+    @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
+      width: fit-content;
+    }
   }
 `;
 
 export const Row2 = styled.div`
   font-family: ${({ theme }) => theme.font.font3};
   color: ${({ theme }) => theme.color.primaryText};
-  /* background-color: ${({ theme }) => theme.color.fg}; 
-  */
   margin-top: 3rem;
 `;
+
 export const OutletContainer = styled.div`
   display: flex;
   gap: 2rem;
   width: 100%;
+
+  @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
+    flex-direction: column;
+  }
 `;
 
-export const RepoOutlet = styled.div`
-  width: 70%;
+export const Right = styled.div`
+  width: 68%;
   border: 1px solid #333;
   padding: 2rem;
   background-color: ${({ theme }) => theme.color.fg};
-`;
 
-// export const Paginate = styled.div`
-//   `;
+  @media screen and (max-width: 860px) {
+    width: 100%;
+  }
+`;
 
 export const Paginate = styled.div`
   display: flex;

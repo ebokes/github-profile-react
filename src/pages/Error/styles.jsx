@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Btn } from "../../components/reuseable";
-import bg from "../../assets/bg7.jpg";
+import bg from "../../assets/bg7.webp";
 
 export const Error = styled.section`
   height: 100vh;
@@ -26,7 +26,7 @@ export const Heading = styled.h1`
 `;
 
 export const ErrorTestContainer = styled.div`
-  background: linear-gradient(135deg, #000000e3, #0000005e), url("${bg}");
+  background: linear-gradient(135deg, #000000c4, #000000c0), url("${bg}");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
