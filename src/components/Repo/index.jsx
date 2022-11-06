@@ -28,19 +28,27 @@ const Repo = () => {
         <RepoContainer>
           {repos && (
             <div>
-              <p>Name: {repos.name}</p>
-              <p>Language: {repos.language}</p>
-              <p>Fork Count: {repos.forks}</p>
-              {repos.stargazers_count > 0 ? (
-                <p>Star: {repos.stargasers_count}</p>
-              ) : (
-                ""
-              )}
-              <p>Watchers: {repos.watchers_count}</p>
-              <p>Default branch: {repos.default_branch}</p>
-              <p>Has issues: True</p>
-              <p>Visibility: {repos.visibility}</p>
-              <p>Created: {repos.created_at}</p>
+              <p>
+                <h3>Repo Name:</h3> {repos.name}
+              </p>
+              <p>
+                <h3>Language:</h3> {repos.language}
+              </p>
+              <p>
+                <h3>Fork Count:</h3> {repos.forks}
+              </p>
+              <p>
+                <h3>Watchers:</h3> {repos.watchers_count}
+              </p>
+              <p>
+                <h3>Default branch:</h3> {repos.default_branch}
+              </p>
+              <p>
+                <h3>Has issues:</h3> True
+              </p>
+              <p>
+                <h3>Visibility:</h3> {repos.visibility}
+              </p>
               <a href={repos.html_url} target="_blank">
                 View more
               </a>

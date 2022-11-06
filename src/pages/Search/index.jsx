@@ -72,7 +72,7 @@ const Search = () => {
           {/* USER LIST CONTAINER*/}
 
           <SearchResultContainer>
-            <p>Total Users Found: {userSearch.length} </p>
+            {/* <p>Total Users Found: {userSearch.length} </p> */}
             {/* USER LIST */}
             <SearchList>
               {userSearch.map((user) => {

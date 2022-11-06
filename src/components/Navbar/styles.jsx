@@ -22,6 +22,10 @@ export const NavContainer = styled.nav`
   width: 90%;
   max-width: 120rem;
   margin: 0 auto;
+
+  @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
+    width: 95%;
+  }
 `;
 
 export const Logo = styled(NavLink)`
@@ -178,13 +182,16 @@ export const Menu = styled.ul`
 
 export const HamburgerStyle = styled.span`
   display: none;
-  padding-right: 4%;
-  margin-right: 0;
 
   @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
     display: inline-block;
+    margin-right: -1rem;
   }
+
   @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
     padding-right: 2%;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.screens.xsm}) {
+    margin-right: 0rem;
   }
 `;

@@ -28,7 +28,7 @@ export const Heading = styled.h1`
 export const ErrorTestContainer = styled.div`
   background: linear-gradient(135deg, #000000c4, #000000c0), url("${bg}");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: left;
   background-size: cover;
   overflow: hidden;
   div {

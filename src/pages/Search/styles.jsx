@@ -12,11 +12,15 @@ export const SearchSection = styled(Section)`
   width: 100%;
   min-height: calc(100vh - 7.85rem);
   margin-bottom: -7.85rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const SearchContainer = styled.div`
   margin-bottom: 6rem;
 `;
+
 export const SearchBar = styled.div`
   font-family: "Istok Web", sans-serif;
   color: ${({ theme }) => theme.color.white};
@@ -63,11 +67,15 @@ export const SearchResultContainer = styled.div`
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  margin-top: 7rem;
+  margin-top: 5rem;
   font-family: "Exo", sans-serif;
   color: ${({ theme }) => theme.color.white};
   flex-direction: column;
   /* margin: 0 auto; */
+
+  @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
+    margin-top: 2rem;
+  }
 `;
 
 export const SearchList = styled.div`

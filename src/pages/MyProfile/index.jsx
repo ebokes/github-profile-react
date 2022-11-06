@@ -36,21 +36,21 @@ const MyProfile = () => {
   const [page, setPage] = useState(1);
   const [toggleView, setToggleView] = useState(false);
   const [toggleOutlet, setToggleOutlet] = useState(false);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const ref = useRef(null);
   const repoRef = useRef(null);
 
   useEffect(() => {
     const apiCall = setTimeout(() => {
       try {
-        setLoading(true);
+        // setLoading(true);
         axios
           .get("https://api.github.com/users/ebokes")
           .then((res) => setData(res.data));
         axios
           .get("https://api.github.com/users/ebokes/repos")
           .then((res) => setRepos(res.data));
-        setLoading(false);
+        // setLoading(false);
       } catch (error) {
         console.errorog(error);
       }

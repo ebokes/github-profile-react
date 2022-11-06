@@ -2,19 +2,19 @@ import { ThemeProvider } from "styled-components";
 import { Route, Routes } from "react-router-dom";
 import { GlobalStyles } from "./GlobalStyles";
 import { lazy } from "react";
-import Loading from "./components/Loading";
 import { Suspense } from "react";
 
-let Navbar = lazy(() => import("./components/Navbar"));
-let Footer = lazy(() => import("./components/Footer"));
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Repo from "./components/Repo";
+import Loading from "./components/Loading";
+import ErrorPage from "./pages/Error/ErrorPage";
+import ErrorBoundary from "./pages/Error/ErrorBoundary";
+import ErrorBoundaryTest from "./pages/Error/ErrorBoundaryTest";
 let Home = lazy(() => import("./pages/Home"));
-let Repo = lazy(() => import("./components/Repo"));
 let Search = lazy(() => import("./pages/Search"));
 let Contact = lazy(() => import("./pages/Contact"));
 let MyProfile = lazy(() => import("./pages/MyProfile"));
-let ErrorPage = lazy(() => import("./pages/Error/ErrorPage"));
-let ErrorBoundary = lazy(() => import("./pages/Error/ErrorBoundary"));
-let ErrorBoundaryTest = lazy(() => import("./pages/Error/ErrorBoundaryTest"));
 
 function App() {
   const theme = {

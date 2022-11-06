@@ -5,17 +5,18 @@ import bg from "../../assets/bg5.jpg";
 export const HomeSection = styled(Section)`
   background: linear-gradient(135deg, #00000041, #0000004f), url("${bg}");
   /* min-height: 80vh; */
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   overflow-x: hidden;
-  position: relative;
+  /* position: relative; */
   display: flex;
   justify-content: center;
   /* margin: 0 auto; */
   width: 100%;
   min-height: calc(100vh - 7.85rem);
-  /* margin-bottom: -7.85rem; */
+  margin-bottom: -7.85rem;
 `;
 
 export const Row = styled.div`
@@ -37,6 +38,7 @@ export const Col1 = styled.div`
   /* max-width: 75rem; */
   font-family: ${({ theme }) => theme.font.font1};
   color: ${({ theme }) => theme.color.white};
+  text-align: center;
 
   h1 {
     font-size: 3rem;
@@ -44,10 +46,6 @@ export const Col1 = styled.div`
     font-family: ${({ theme }) => theme.font.font2};
     line-height: 1;
     color: ${({ theme }) => theme.color.white};
-
-    @media screen and (max-width: ${({ theme }) => theme.screens.xsm}) {
-      text-align: center;
-    }
   }
 `;
 
