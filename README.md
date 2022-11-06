@@ -1,5 +1,5 @@
 # altschoolAfrica-exam-project
-Github profile lookup is an application built and designed by Chibuokem Egbuchulam as a second semester exam project for Altschool Africa.
+Github Portfolio is an application built and designed by Chibuokem Egbuchulam as a second semester exam project for Altschool Africa.
 
 The application, built in React js utilizes github APIs that displays details of my github profile and repositories.
 
