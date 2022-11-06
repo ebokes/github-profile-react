@@ -33,8 +33,11 @@ export const Logo = styled(NavLink)`
   justify-content: center;
   align-items: center;
   align-self: center;
-  /* width: 7rem; */
+  border-top: 1px solid ${({ theme }) => theme.color.primaryText};
+  border-bottom: 1px solid ${({ theme }) => theme.color.primaryText};
+  border-radius: 0.3rem;
   height: 3.5rem;
+  padding: 0 0.5rem;
 
   h2 {
     color: ${({ theme }) => theme.color.primaryText};
@@ -133,11 +136,12 @@ export const Menu = styled.ul`
     justify-content: flex-start;
     flex-direction: column;
     position: absolute;
-    top: 6.2rem;
+    top: 6.5rem;
     right: 0;
     background-color: ${({ theme }) => theme.color.fg};
     padding-left: 2rem;
-    height: 100vh;
+    min-height: calc(100vh - 7.85rem);
+    margin-bottom: -7.85rem;
     animation: slideOut 0.5s ease-in;
     margin-right: 0;
     opacity: 0.9;
@@ -190,6 +194,7 @@ export const HamburgerStyle = styled.span`
 
   @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
     padding-right: 2%;
+    cursor: auto;
   }
   @media screen and (max-width: ${({ theme }) => theme.screens.xsm}) {
     margin-right: 0rem;

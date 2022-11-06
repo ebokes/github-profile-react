@@ -19,15 +19,6 @@ let MyProfile = lazy(() => import("./pages/MyProfile"));
 function App() {
   const theme = {
     color: {
-      primary: "#959595",
-      secondary: "#232434",
-      border: "#ccc",
-      black: "#000",
-      white: "#fff",
-      transparent: "transparent",
-      main: "#0898a0",
-      navfooter: "#fff",
-
       primaryText: "#b1b1b1",
       secondaryText: "#B57224",
       tertiaryText: "#e5e5e5",
@@ -37,6 +28,8 @@ function App() {
       bg: "#000",
       fg: "#1C1C1C",
       bg2: "#141414",
+      white: "#fff",
+      transparent: "transparent",
     },
 
     font: {

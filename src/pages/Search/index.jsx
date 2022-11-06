@@ -7,6 +7,7 @@ import {
   CardContent,
   Details,
   SearchBar,
+  SearchBtn,
   SearchContainer,
   SearchList,
   SearchResultContainer,
@@ -14,8 +15,7 @@ import {
   UserCard,
   View,
 } from "./styles";
-import { Btn, Container } from "../../components/reuseable";
-import Loading from "../../components/Loading";
+import { Container } from "../../components/reuseable";
 import { Helmet } from "react-helmet-async";
 
 const Search = () => {
@@ -31,7 +31,6 @@ const Search = () => {
         `https://api.github.com/search/users?q=${input}`
       );
       setUserSearch(response.data.items);
-
       setLoading(false);
     } catch (error) {
       console.error(error);
@@ -50,7 +49,6 @@ const Search = () => {
           <meta name="description" content="Search for any Github profile" />
           <link rel="canonical" href="/search" />
         </Helmet>
-        {/* Title */}
         <SearchContainer>
           <SearchBar>
             <h1>Enter name or Github username</h1>
@@ -66,21 +64,16 @@ const Search = () => {
                 placeholder="Search"
                 required
               />
-              <Btn onClick={onSubmitHandler}>Search</Btn>
+              <SearchBtn onClick={onSubmitHandler}>Search</SearchBtn>
             </form>
           </SearchBar>
-          {/* USER LIST CONTAINER*/}
 
           <SearchResultContainer>
-            {/* <p>Total Users Found: {userSearch.length} </p> */}
-            {/* USER LIST */}
             <SearchList>
               {userSearch.map((user) => {
                 return (
                   <div key={user.id}>
-                    {/* USER CARD */}
                     <UserCard>
-                      {/* CARD AVATAR */}
                       <CardContent>
                         <CardAvatar>
                           <img alt="avatar" src={user.avatar_url} />

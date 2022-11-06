@@ -36,23 +36,20 @@ const MyProfile = () => {
   const [page, setPage] = useState(1);
   const [toggleView, setToggleView] = useState(false);
   const [toggleOutlet, setToggleOutlet] = useState(false);
-  // const [loading, setLoading] = useState(false);
   const ref = useRef(null);
   const repoRef = useRef(null);
 
   useEffect(() => {
     const apiCall = async () => {
       try {
-        // setLoading(true);
         const res = await axios.get("https://api.github.com/users/ebokes");
         setData(res.data);
         const response = await axios.get(
           "https://api.github.com/users/ebokes/repos"
         );
         setRepos(response.data);
-        // setLoading(false);
       } catch (error) {
-        console.errorog(error);
+        console.error(error);
       }
     };
     apiCall();
@@ -106,12 +103,15 @@ const MyProfile = () => {
                   <span>
                     <HiLink />
                     <a href={`${data.blog}`} target="_blank">
-                      Porfolio Website
+                      Personal Porfolio Website
                     </a>
                   </span>
                   <span>
                     <GoLocation />
                     <p>{data.location}</p>
+                  </span>
+                  <span>
+                    <GoVerified /> <p>{`${data.created_at}`.slice(0, 10)}</p>
                   </span>
 
                   <Stats>
@@ -148,15 +148,15 @@ const MyProfile = () => {
                         <span>View Profile</span>
                       </span>
                     </ViewProfile>
-                    <RepoToggleBtn onClick={handleToggleView}>
-                      View Repos
+                    <RepoToggleBtn href="#repos" onClick={handleToggleView}>
+                      View Details
                     </RepoToggleBtn>
                   </ProfileBtnGroup>
                 </Col2>
               </ProfileCard>
             </Row1>
             {toggleView && (
-              <Row2>
+              <Row2 id="repos">
                 <OutletContainer ref={ref}>
                   <Left>
                     <div>
@@ -186,7 +186,7 @@ const MyProfile = () => {
                 </OutletContainer>
                 <Paginate>
                   <div>
-                    Pages: {page} of {pages}
+                    {page} of {pages}
                   </div>
 
                   <ButtonGroup>
@@ -196,7 +196,7 @@ const MyProfile = () => {
                         setPage((prev) => prev - 1);
                       }}
                     >
-                      prev
+                      Prev
                     </Prev>
 
                     {Array.from(
@@ -219,7 +219,7 @@ const MyProfile = () => {
                         setPage((prev) => prev + 1);
                       }}
                     >
-                      next
+                      Next
                     </Next>
                   </ButtonGroup>
                 </Paginate>

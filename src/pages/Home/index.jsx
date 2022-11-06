@@ -13,8 +13,11 @@ const Home = () => {
         </Helmet>
         <Row>
           <Col1>
-            <h2>Welcome to Github Profile Lookup</h2>
-            <p>search for any github profile</p>
+            <h2>Welcome to My Github Porfolio</h2>
+            <p>
+              Check out my Profile <br />
+              or Search for any Github User
+            </p>
           </Col1>
           <Col2>
             <SearchBtn to="/profile">My Profile</SearchBtn>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { AnchorBtn, Section } from "../../components/reuseable";
+import { AnchorBtn, Btn, Section } from "../../components/reuseable";
 import bg from "../../assets/bg10.webp";
 
 export const SearchSection = styled(Section)`
@@ -29,7 +29,7 @@ export const SearchBar = styled.div`
   h1 {
     font-size: 3rem;
     font-weight: 500;
-    font-family: "Rajdhani", sans-serif;
+    font-family: ${({ theme }) => theme.font.font1};
     line-height: 1;
     color: ${({ theme }) => theme.color.primaryText};
 
@@ -46,7 +46,7 @@ export const SearchBar = styled.div`
   }
 
   input {
-    padding: 1rem 1rem;
+    padding: 1.5rem 1rem;
     width: 35rem;
     border: none;
     border-radius: 0.5rem;
@@ -59,6 +59,10 @@ export const SearchBar = styled.div`
       color: #fff;
     }
   }
+`;
+
+export const SearchBtn = styled(Btn)`
+  padding: 1.2rem 1.2rem;
 `;
 
 export const SearchResultContainer = styled.div`
@@ -93,7 +97,6 @@ export const UserCard = styled.div`
 
 export const CardContent = styled.div`
   display: flex;
-  /* border: 1px solid #fff; */
   width: 35rem;
   border-radius: 0.5rem;
   color: ${({ theme }) => theme.color.primaryText};

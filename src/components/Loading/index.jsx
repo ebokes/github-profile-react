@@ -1,5 +1,5 @@
 import React from "react";
-import spinner from "../../assets/spinner4.gif";
+import spinner from "../../assets/bounce.gif";
 import { LoadingContainer } from "./styles";
 
 const Loading = () => {

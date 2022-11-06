@@ -56,6 +56,7 @@ export const AnchorBtn = styled.a`
     transform: translateY(3px);
   }
 `;
+
 export const Btn = styled.button`
   background: linear-gradient(
     to right,

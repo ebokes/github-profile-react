@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Container } from "../../components/reuseable";
 import {
   ContactSection,
@@ -13,6 +14,11 @@ const Contact = () => {
   return (
     <ContactSection>
       <Container>
+        <Helmet>
+          <title>Contact me</title>
+          <meta name="description" content="Feel free to reach out to me" />
+          <link rel="canonical" href="/contact" />
+        </Helmet>
         <ContactWrapper>
           <Heading>
             <h1>Feel Free Contact</h1>

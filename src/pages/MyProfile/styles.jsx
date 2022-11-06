@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { Btn, Container, Section } from "../../components/reuseable";
-import bg from "../../assets/bg5.jpg";
+import { AnchorBtn, Container, Section } from "../../components/reuseable";
+import bg from "../../assets/bg5.webp";
+import { Link } from "react-router-dom";
 
 export const ProfileSection = styled(Section)`
   background: linear-gradient(135deg, #00000093, #000000a9), url("${bg}");
@@ -53,19 +54,14 @@ export const Col1 = styled.div`
 
   div {
     width: 70%;
-    /* margin: 0 auto; */
     display: flex;
     justify-content: center;
 
     & > img {
       max-width: 100%;
-      border-radius: 1rem;
+      border-radius: 50%;
       height: auto;
       transition: all 1s ease-out;
-
-      :hover {
-        transform: scale(1.1);
-      }
     }
     @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
       width: 80%;
@@ -162,7 +158,7 @@ export const ViewProfile = styled.a`
   }
 `;
 
-export const RepoToggleBtn = styled(Btn)``;
+export const RepoToggleBtn = styled(AnchorBtn)``;
 
 export const Stats = styled.div`
   display: flex;
@@ -175,7 +171,6 @@ export const Stats = styled.div`
   }
 
   & > div {
-    /* text-align: center; */
     border: 1px solid ${({ theme }) => theme.color.secondaryText};
     border-radius: 0.5rem;
     display: inline-flex;
@@ -212,6 +207,7 @@ export const RepoList = styled.div`
   @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
     display: flex;
     flex-wrap: wrap;
+    gap: 1rem;
   }
 `;
 
@@ -232,13 +228,27 @@ export const RepoItem = styled.div`
 
     @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
       width: fit-content;
+      background: linear-gradient(
+        to right,
+        ${({ theme }) => theme.color.linGrad1},
+        ${({ theme }) => theme.color.linGrad2}
+      );
+      color: ${({ theme }) => theme.color.bgGradient};
+      padding: 0.7rem 2rem;
+      border-radius: 0.5rem;
+      border: none;
+      font-weight: 600;
+      font-size: 1.6rem;
+      font-family: "Exo", sans-serif;
+      transition: all 0.5s;
+      margin-bottom: 1rem;
     }
 
     :hover {
       color: ${({ theme }) => theme.color.secondaryText};
 
       @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
-        color: ${({ theme }) => theme.color.primaryText};
+        color: ${({ theme }) => theme.color.bgGradient};
       }
     }
   }
@@ -259,8 +269,22 @@ export const RepoItem = styled.div`
 
     @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
       width: fit-content;
+      padding: 0.7rem 2rem;
+      border-radius: 0.5rem;
+      border: none;
+      font-weight: 600;
+      font-size: 1.6rem;
+      font-family: "Exo", sans-serif;
+      transition: all 0.5s;
+      margin-bottom: 1rem;
     }
   }
+`;
+
+export const View = styled(Link)`
+  padding: 0.3rem;
+  margin-left: 1rem;
+  border: 0.1rem solid ${({ theme }) => theme.color.secondaryText}; ;
 `;
 
 export const Row2 = styled.div`
@@ -297,6 +321,10 @@ export const Paginate = styled.div`
   color: #fff;
   margin: 3rem 0;
   font-family: ${({ theme }) => theme.font.font3};
+
+  & > div {
+    color: ${({ theme }) => theme.color.primaryText};
+  }
 `;
 
 export const ButtonGroup = styled.div`
@@ -321,9 +349,9 @@ export const Prev = styled.button`
 `;
 
 export const Pagebtn = styled.button`
-  background-color: ${({ theme }) => theme.color.secondary};
-  color: ${({ theme }) => theme.color.primary};
-  border: 1px solid ${({ theme }) => theme.color.primary};
+  background-color: ${({ theme }) => theme.color.fg};
+  color: ${({ theme }) => theme.color.linGrad2};
+  border: 1px solid ${({ theme }) => theme.color.linGrad2};
 `;
 
 export const Next = styled.button`
