@@ -60,7 +60,7 @@ const Navbar = () => {
                 My Profile
               </NavLink>
             </li>
-            {/* <li>
+            <li>
               <NavLink
                 onClick={handleClose}
                 to="/search"
@@ -68,7 +68,7 @@ const Navbar = () => {
               >
                 Search User
               </NavLink>
-            </li> */}
+            </li>
             <li>
               <NavLink
                 onClick={handleClose}

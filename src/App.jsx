@@ -1,19 +1,20 @@
 import { ThemeProvider } from "styled-components";
 import { Route, Routes } from "react-router-dom";
 import { GlobalStyles } from "./GlobalStyles";
-// import Repos from "./components/Repos";
-// import Repo from "./components/Repo";
+import { lazy } from "react";
+import Loading from "./components/Loading";
+import { Suspense } from "react";
 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import Repo from "./components/Repo";
-// import About from "./pages/About";
-import Contact from "./pages/Contact";
-import MyProfile from "./pages/MyProfile";
-import ErrorPage from "./pages/Error/ErrorPage";
-import ErrorBoundary from "./pages/Error/ErrorBoundary";
-import ErrorBoundaryTest from "./pages/Error/ErrorBoundaryTest";
+let Navbar = lazy(() => import("./components/Navbar"));
+let Footer = lazy(() => import("./components/Footer"));
+let Home = lazy(() => import("./pages/Home"));
+let Repo = lazy(() => import("./components/Repo"));
+let Search = lazy(() => import("./pages/Search"));
+let Contact = lazy(() => import("./pages/Contact"));
+let MyProfile = lazy(() => import("./pages/MyProfile"));
+let ErrorPage = lazy(() => import("./pages/Error/ErrorPage"));
+let ErrorBoundary = lazy(() => import("./pages/Error/ErrorBoundary"));
+let ErrorBoundaryTest = lazy(() => import("./pages/Error/ErrorBoundaryTest"));
 
 function App() {
   const theme = {
@@ -57,19 +58,20 @@ function App() {
       <ThemeProvider theme={theme}>
         <ErrorBoundary>
           <GlobalStyles />
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-
-            {/* <Route path="/about" element={<About />} /> */}
-            <Route path="/profile" element={<MyProfile />}>
-              <Route path=":repoId" element={<Repo />} />
-            </Route>
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/err-boundary" element={<ErrorBoundaryTest />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
-          <Footer />
+          <Suspense fallback={<Loading />}>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/profile" element={<MyProfile />}>
+                <Route path=":repoId" element={<Repo />} />
+              </Route>
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/err-boundary" element={<ErrorBoundaryTest />} />
+              <Route path="*" element={<ErrorPage />} />
+            </Routes>
+            <Footer />
+          </Suspense>
         </ErrorBoundary>
       </ThemeProvider>
     </>

@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import { Btn, Section } from "../../components/reuseable";
-import map from "../../assets/map-bg.png";
+import map from "../../assets/bg14.webp";
 
 export const ContactSection = styled(Section)`
-  background: linear-gradient(135deg, #0000005f, #0000005f), url(${map});
+  background: linear-gradient(135deg, #00000080, #0000008e), url(${map});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   min-height: calc(100vh - 7.85rem);
   margin-bottom: -7.85rem;
 `;

@@ -1,5 +1,5 @@
 https://githubprofilelookup.netlify.app/
-https://githubprofilelookup.netlify.app/about
+https://githubprofilelookup.netlify.app/search
 https://githubprofilelookup.netlify.app/profile
 https://githubprofilelookup.netlify.app/err-boundary
 https://githubprofilelookup.netlify.app/contact

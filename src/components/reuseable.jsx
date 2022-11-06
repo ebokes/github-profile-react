@@ -32,6 +32,26 @@ export const LinkBtn = styled(NavLink)`
     transform: translateY(3px);
   }
 `;
+
+export const AnchorBtn = styled.a`
+  background: linear-gradient(
+    to right,
+    ${({ theme }) => theme.color.linGrad1},
+    ${({ theme }) => theme.color.linGrad2}
+  );
+  color: ${({ theme }) => theme.color.bgGradient};
+  padding: 0.7rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 600;
+  font-size: 1.6rem;
+  font-family: "Exo", sans-serif;
+  transition: all 0.5s;
+
+  :active {
+    transform: translateY(3px);
+  }
+`;
 export const Btn = styled.button`
   background: linear-gradient(
     to right,
