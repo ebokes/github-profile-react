@@ -22,13 +22,6 @@ const Contact = () => {
             <InputWrapper>
               <input placeholder="Name" name="name" type="text" required />
               <input placeholder="Email" name="email" type="email" required />
-              <input placeholder="Phone" name="phone" type="phone" required />
-              <input
-                placeholder="Website"
-                name="website"
-                type="text"
-                required
-              />
             </InputWrapper>
             <MessageStyle>
               <textarea

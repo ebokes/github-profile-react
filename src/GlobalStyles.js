@@ -19,6 +19,7 @@ html{
 body{
     font-size: 1.6rem;
     background-color: ${({ theme }) => theme.color.bg2};
+    margin: 0;
 }
 
 ul{

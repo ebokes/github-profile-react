@@ -42,15 +42,6 @@ const Navbar = () => {
                 Home
               </NavLink>
             </li>
-            {/* <li>
-              <NavLink
-                onClick={handleClose}
-                to="/about"
-                className={({ isActive }) => (isActive ? "active" : "normal")}
-              >
-                About
-              </NavLink>
-            </li> */}
             <li>
               <NavLink
                 onClick={handleClose}

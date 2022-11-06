@@ -7,8 +7,11 @@ export const RepoContainer = styled.div`
     display: inline-block;
   }
 
-  p {
+  span {
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
   }
 
   a {

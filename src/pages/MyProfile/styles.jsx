@@ -52,11 +52,23 @@ export const Col1 = styled.div`
   justify-content: center;
 
   div {
-    width: 80%;
+    width: 70%;
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: center;
+
     & > img {
       max-width: 100%;
       border-radius: 1rem;
       height: auto;
+      transition: all 1s ease-out;
+
+      :hover {
+        transform: scale(1.1);
+      }
+    }
+    @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
+      width: 80%;
     }
   }
 
@@ -72,14 +84,22 @@ export const Col2 = styled.div`
   color: ${({ theme }) => theme.color.primaryText};
 
   & > span {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     display: flex;
     gap: 0.3rem;
 
     & > h2 {
-      & > p {
-        font-size: 1.7rem;
-        font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      & > span {
+        &:first-child {
+          margin-right: 1rem;
+          margin-bottom: 2rem;
+        }
+        &:last-child {
+          font-size: 1.7rem;
+          font-weight: 500;
+        }
       }
     }
 

@@ -1,14 +1,14 @@
 import React from "react";
 import { Container, Section } from "../../components/reuseable";
-import { Error } from "./styles";
+import { Error404 } from "./styles";
 
 const ErrorPage = () => {
   return (
     <Section>
       <Container>
-        <Error>
+        <Error404>
           <h2>404... Page not found</h2>
-        </Error>
+        </Error404>
       </Container>
     </Section>
   );

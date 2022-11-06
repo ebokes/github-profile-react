@@ -1,36 +1,42 @@
 import styled from "styled-components";
-import { Btn } from "../../components/reuseable";
+import { Btn, LinkBtn, Section } from "../../components/reuseable";
 import bg from "../../assets/bg7.webp";
+import { Link } from "react-router-dom";
 
-export const Error = styled.section`
+export const Error404 = styled.section`
   height: 100vh;
-
-  /* margin-top: 30rem; */
 
   h2 {
     color: #000;
-    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-family: ${({ theme }) => theme.font.font2};
   }
 `;
-export const ErrorBoundarySection = styled.section`
+
+export const ErrorBoundarySection = styled(Section)`
+  /* background: ${({ theme }) => theme.color.fg}; */
   /* margin: auto; */
-  height: 100vh;
+  height: 80vh;
   /* width: 100vw; */
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  overflow: hidden;
 `;
 
 export const Heading = styled.h1`
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: ${({ theme }) => theme.font.font2};
+  color: ${({ theme }) => theme.color.bg};
 `;
 
 export const ErrorTestContainer = styled.div`
-  background: linear-gradient(135deg, #000000c4, #000000c0), url("${bg}");
+  background: linear-gradient(135deg, #000000c4, #000000c0), url(${bg});
   background-repeat: no-repeat;
   background-position: left;
   background-size: cover;
   overflow: hidden;
+  /* height: 100vh; */
+
   div {
     display: flex;
     flex-direction: column;
@@ -52,18 +58,30 @@ export const ErrorTestContainer = styled.div`
   h1 {
     font-size: 5rem;
   }
-
-  button {
-    /* width: 5rem; */
-    /* padding: 1rem 4rem; */
-    /* color: ${({ theme }) => theme.color.white}; */
-    /* font-size: 2rem; */
-    /* border-radius: 1rem; */
-    /* border: 1px solid ${({ theme }) => theme.color.white}; */
-  }
 `;
 
 export const IncrementBtn = styled(Btn)`
   padding: 0.7rem 3rem;
   color: ${({ theme }) => theme.color.white};
 `;
+
+// export const HomeBtn = styled(Link)`
+//   background: linear-gradient(
+//     to right,
+//     ${({ theme }) => theme.color.linGrad1},
+//     ${({ theme }) => theme.color.linGrad2}
+//   );
+//   color: ${({ theme }) => theme.color.bgGradient};
+//   padding: 0.5rem 1rem;
+//   border-radius: 0.5rem;
+//   border: none;
+//   font-weight: 600;
+//   font-size: 1.5rem;
+//   font-family: "Exo", sans-serif;
+//   transition: all 0.5s;
+//   text-decoration: none;
+
+//   :active {
+//     transform: translateY(3px);
+//   }
+// `;

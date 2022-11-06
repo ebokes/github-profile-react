@@ -41,21 +41,21 @@ const MyProfile = () => {
   const repoRef = useRef(null);
 
   useEffect(() => {
-    const apiCall = setTimeout(() => {
+    const apiCall = async () => {
       try {
         // setLoading(true);
-        axios
-          .get("https://api.github.com/users/ebokes")
-          .then((res) => setData(res.data));
-        axios
-          .get("https://api.github.com/users/ebokes/repos")
-          .then((res) => setRepos(res.data));
+        const res = await axios.get("https://api.github.com/users/ebokes");
+        setData(res.data);
+        const response = await axios.get(
+          "https://api.github.com/users/ebokes/repos"
+        );
+        setRepos(response.data);
         // setLoading(false);
       } catch (error) {
         console.errorog(error);
       }
-    }, 1500);
-    return () => clearTimeout(apiCall);
+    };
+    apiCall();
   }, []);
 
   const PER_PAGE = 5;
@@ -96,8 +96,8 @@ const MyProfile = () => {
                 <Col2>
                   <span>
                     <h2>
-                      {data.name}
-                      <p>@{data.login}</p>
+                      <span>{data.name}</span>
+                      <span>@{data.login}</span>
                     </h2>
                   </span>
                   <span>
@@ -106,7 +106,7 @@ const MyProfile = () => {
                   <span>
                     <HiLink />
                     <a href={`${data.blog}`} target="_blank">
-                      chibuokemegbuchulam.com
+                      Porfolio Website
                     </a>
                   </span>
                   <span>

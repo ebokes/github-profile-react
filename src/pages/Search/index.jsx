@@ -23,18 +23,18 @@ const Search = () => {
   const [userSearch, setUserSearch] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = async (e) => {
     e.preventDefault();
-    setLoading(true);
     try {
-      axios
-        .get(`https://api.github.com/search/users?q=${input}`)
-        .then((res) => {
-          setUserSearch(res.data.items);
-        });
+      setLoading(true);
+      const response = await axios.get(
+        `https://api.github.com/search/users?q=${input}`
+      );
+      setUserSearch(response.data.items);
+
       setLoading(false);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
