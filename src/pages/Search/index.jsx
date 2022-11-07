@@ -37,10 +37,6 @@ const Search = () => {
     }
   };
 
-  if (loading) {
-    return <Loader />;
-  }
-
   return (
     <SearchSection>
       <Container>
@@ -50,7 +46,11 @@ const Search = () => {
           <link rel="canonical" href="/search" />
         </Helmet>
         <SearchContainer>
-          <SearchBar>
+          <SearchBar
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ type: "tween", duration: 0.5 }}
+            initial={{ scale: 0, opacity: 0 }}
+          >
             <h1>Enter name or Github username</h1>
             {/* Search Bar */}
             <form>
@@ -67,32 +67,35 @@ const Search = () => {
               <SearchBtn onClick={onSubmitHandler}>Search</SearchBtn>
             </form>
           </SearchBar>
-
-          <SearchResultContainer>
-            <SearchList>
-              {userSearch.map((user) => {
-                return (
-                  <div key={user.id}>
-                    <UserCard>
-                      <CardContent>
-                        <CardAvatar>
-                          <img alt="avatar" src={user.avatar_url} />
-                        </CardAvatar>
-                        <Details>
-                          <h1>{user.login}</h1>
-                          <p>{user.location}</p>
-                          <View href={`${user.html_url}`} target="_blank">
-                            <BsGithub />
-                            <p>View Profile</p>
-                          </View>
-                        </Details>
-                      </CardContent>
-                    </UserCard>
-                  </div>
-                );
-              })}
-            </SearchList>
-          </SearchResultContainer>
+          {loading ? (
+            <Loader />
+          ) : (
+            <SearchResultContainer animate={{ y: 0 }} initial={{ y: 30 }}>
+              <SearchList>
+                {userSearch.map((user) => {
+                  return (
+                    <div key={user.id}>
+                      <UserCard>
+                        <CardContent>
+                          <CardAvatar>
+                            <img alt="avatar" src={user.avatar_url} />
+                          </CardAvatar>
+                          <Details>
+                            <h1>{user.login}</h1>
+                            <p>{user.location}</p>
+                            <View href={`${user.html_url}`} target="_blank">
+                              <BsGithub />
+                              <p>View Profile</p>
+                            </View>
+                          </Details>
+                        </CardContent>
+                      </UserCard>
+                    </div>
+                  );
+                })}
+              </SearchList>
+            </SearchResultContainer>
+          )}
         </SearchContainer>
       </Container>
     </SearchSection>

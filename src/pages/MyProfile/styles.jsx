@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { AnchorBtn, Container, Section } from "../../components/reuseable";
 import bg from "../../assets/bg5.webp";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export const ProfileSection = styled(Section)`
   background: linear-gradient(135deg, #00000093, #000000a9), url("${bg}");
@@ -16,7 +17,7 @@ export const ProfileContainer = styled(Container)`
   margin: 0 auto;
 `;
 
-export const Row1 = styled.div`
+export const Row1 = styled(motion.div)`
   background-color: ${({ theme }) => theme.color.fg};
   padding: 3rem 0;
   border: 1px solid #333;
@@ -303,7 +304,7 @@ export const OutletContainer = styled.div`
   }
 `;
 
-export const Right = styled.div`
+export const Right = styled(motion.div)`
   width: 68%;
   border: 1px solid #333;
   padding: 2rem;

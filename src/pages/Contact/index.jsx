@@ -9,6 +9,7 @@ import {
   MessageStyle,
   SubmitBtn,
 } from "./styles";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
@@ -20,11 +21,19 @@ const Contact = () => {
           <link rel="canonical" href="/contact" />
         </Helmet>
         <ContactWrapper>
-          <Heading>
+          <Heading
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ type: "tween", duration: 1 }}
+            initial={{ scale: 0, opacity: 0 }}
+          >
             <h1>Feel Free Contact</h1>
             <h1>Me Now</h1>
           </Heading>
-          <form>
+          <motion.form
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+          >
             <InputWrapper>
               <input placeholder="Name" name="name" type="text" required />
               <input placeholder="Email" name="email" type="email" required />
@@ -39,7 +48,7 @@ const Contact = () => {
               />
             </MessageStyle>
             <SubmitBtn type="submit">Submit</SubmitBtn>
-          </form>
+          </motion.form>
         </ContactWrapper>
       </Container>
     </ContactSection>

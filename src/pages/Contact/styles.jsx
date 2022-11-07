@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Btn, Section } from "../../components/reuseable";
 import map from "../../assets/bg14.webp";
+import { motion } from "framer-motion";
 
 export const ContactSection = styled(Section)`
   background: linear-gradient(135deg, #00000080, #0000008e), url(${map});
@@ -15,7 +16,7 @@ export const ContactWrapper = styled.div`
   margin: 4rem 0;
 `;
 
-export const Heading = styled.div`
+export const Heading = styled(motion.div)`
   margin: 0 auto;
   display: flex;
   justify-content: center;

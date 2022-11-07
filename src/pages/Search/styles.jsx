@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { AnchorBtn, Btn, Section } from "../../components/reuseable";
 import bg from "../../assets/bg10.webp";
+import { motion } from "framer-motion";
 
 export const SearchSection = styled(Section)`
   background: linear-gradient(135deg, #00000074, #00000074), url("${bg}");
@@ -21,7 +22,7 @@ export const SearchContainer = styled.div`
   margin-bottom: 6rem;
 `;
 
-export const SearchBar = styled.div`
+export const SearchBar = styled(motion.div)`
   font-family: "Istok Web", sans-serif;
   color: ${({ theme }) => theme.color.white};
   text-align: center;
@@ -65,7 +66,7 @@ export const SearchBtn = styled(Btn)`
   padding: 1.2rem 1.2rem;
 `;
 
-export const SearchResultContainer = styled.div`
+export const SearchResultContainer = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;

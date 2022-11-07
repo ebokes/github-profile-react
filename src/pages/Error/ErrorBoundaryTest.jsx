@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { ErrorTestContainer, IncrementBtn } from "./styles";
+import { motion } from "framer-motion";
 
 const ErrorBoundaryTest = () => {
   const [counter, setCounter] = useState(0);
@@ -19,7 +20,11 @@ const ErrorBoundaryTest = () => {
 
   return (
     <ErrorTestContainer>
-      <div>
+      <motion.div
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ type: "tween", duration: 1 }}
+        initial={{ scale: 0, opacity: 0 }}
+      >
         <Helmet>
           <title>ErrorBoundary Simulator</title>
           <meta
@@ -32,7 +37,7 @@ const ErrorBoundaryTest = () => {
         <h1>{counter}</h1>
         <IncrementBtn onClick={handleCount}>+</IncrementBtn>
         <p>Click the button {decrement} times and watch what comes next</p>
-      </div>
+      </motion.div>
     </ErrorTestContainer>
   );
 };

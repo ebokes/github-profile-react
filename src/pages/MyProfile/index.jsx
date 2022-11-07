@@ -62,7 +62,6 @@ const MyProfile = () => {
 
   const handleToggleView = () => {
     setToggleView(true);
-    ref.current?.scrollIntoView({ behavior: "smooth" });
   };
   const handleToggleOutlet = () => {
     setToggleOutlet(true);
@@ -82,7 +81,11 @@ const MyProfile = () => {
         </Helmet>
         {data.length !== 0 ? (
           <>
-            <Row1>
+            <Row1
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ type: "tween", duration: 0.5 }}
+              initial={{ scale: 0, opacity: 0 }}
+            >
               <h1>My GitHub Profile</h1>
               <ProfileCard>
                 <Col1>
@@ -179,7 +182,12 @@ const MyProfile = () => {
                     </div>
                   </Left>
                   {toggleOutlet && (
-                    <Right ref={repoRef}>
+                    <Right
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.5 }}
+                      initial={{ x: -100, opacity: 0 }}
+                      ref={repoRef}
+                    >
                       <Outlet />
                     </Right>
                   )}
