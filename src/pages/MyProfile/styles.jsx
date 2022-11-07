@@ -148,6 +148,10 @@ export const ViewProfile = styled.a`
   font-family: "Exo", sans-serif;
   transition: all 0.5s;
 
+  :hover {
+    transform: scale(1.07);
+  }
+
   :active {
     transform: translateY(3px);
   }
@@ -177,14 +181,11 @@ export const Stats = styled.div`
     display: inline-flex;
     justify-content: center;
     width: 11rem;
-
-    & > a {
-      color: ${({ theme }) => theme.color.secondaryText};
-      display: flex;
-      gap: 0.4rem;
-      align-items: center;
-      padding: 0.5rem;
-    }
+    color: ${({ theme }) => theme.color.secondaryText};
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    padding: 0.5rem;
   }
 `;
 

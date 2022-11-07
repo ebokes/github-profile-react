@@ -31,6 +31,10 @@ export const RepoContainer = styled.div`
     font-family: "Exo", sans-serif;
     transition: all 0.5s;
 
+    :hover {
+      transform: scale(1.07);
+    }
+
     :active {
       transform: translateY(3px);
     }

@@ -61,7 +61,7 @@ const Search = () => {
                   setUserSearch([]);
                 }}
                 type="search"
-                placeholder="Search"
+                placeholder="Enter Username"
                 required
               />
               <SearchBtn onClick={onSubmitHandler}>Search</SearchBtn>

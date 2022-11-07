@@ -35,7 +35,7 @@ export const Logo = styled(NavLink)`
   align-self: center;
   border-top: 1px solid ${({ theme }) => theme.color.primaryText};
   border-bottom: 1px solid ${({ theme }) => theme.color.primaryText};
-  border-radius: 0.3rem;
+  border-radius: 0.6rem;
   height: 3.5rem;
   padding: 0 0.5rem;
 

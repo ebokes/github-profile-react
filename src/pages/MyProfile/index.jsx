@@ -119,29 +119,14 @@ const MyProfile = () => {
 
                   <Stats>
                     <div>
-                      <a
-                        href="https://github.com/ebokes?tab=repositories"
-                        target="_blank"
-                      >
-                        <span>Repos: </span>
-                        <span>{data.public_repos}</span>
-                      </a>
+                      <span>Repos: </span>
+                      <span>{data.public_repos}</span>
                     </div>
                     <div>
-                      <a
-                        href="https://github.com/ebokes?tab=followers"
-                        target="_blank"
-                      >
-                        <span>Followers: </span> <span>{data.followers}</span>
-                      </a>
+                      <span>Followers: </span> <span>{data.followers}</span>
                     </div>
                     <div>
-                      <a
-                        href="https://github.com/ebokes?tab=following"
-                        target="_blank"
-                      >
-                        <span>Following: </span> <span>{data.following}</span>
-                      </a>
+                      <span>Following: </span> <span>{data.following}</span>
                     </div>
                   </Stats>
                   <ProfileBtnGroup>
@@ -185,7 +170,7 @@ const MyProfile = () => {
                     <Right
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ duration: 0.5 }}
-                      initial={{ x: -100, opacity: 0 }}
+                      initial={{ x: 100, opacity: 0 }}
                       ref={repoRef}
                     >
                       <Outlet />

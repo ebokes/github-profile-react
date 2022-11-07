@@ -32,6 +32,10 @@ export const LinkBtn = styled(NavLink)`
   font-family: "Exo", sans-serif;
   transition: all 0.5s;
 
+  :hover {
+    transform: scale(1.07);
+  }
+
   :active {
     transform: translateY(3px);
   }
@@ -51,6 +55,10 @@ export const AnchorBtn = styled.a`
   font-size: 1.6rem;
   font-family: "Exo", sans-serif;
   transition: all 0.5s;
+
+  :hover {
+    transform: scale(1.07);
+  }
 
   :active {
     transform: translateY(3px);
@@ -72,6 +80,10 @@ export const Btn = styled.button`
   font-family: "Exo", sans-serif;
   cursor: pointer;
   transition: all 0.5s;
+
+  :hover {
+    transform: scale(1.07);
+  }
 
   :active {
     transform: translateY(3px);

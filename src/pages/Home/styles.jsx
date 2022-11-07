@@ -60,5 +60,9 @@ export const Col2 = styled(motion.div)`
     row-gap: 2rem;
   }
 `;
-export const SearchBtn = styled(LinkBtn)``;
-export const ProfileBtn = styled(LinkBtn)``;
+export const SearchBtn = styled(LinkBtn)`
+  text-align: center;
+`;
+export const ProfileBtn = styled(LinkBtn)`
+  text-align: center;
+`;

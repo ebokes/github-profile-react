@@ -58,12 +58,13 @@ export const SearchBar = styled(motion.div)`
 
     ::placeholder {
       color: #fff;
+      font-family: ${({ theme }) => theme.font.font1};
     }
   }
 `;
 
 export const SearchBtn = styled(Btn)`
-  padding: 1.2rem 1.2rem;
+  padding: 1.2rem 2rem;
 `;
 
 export const SearchResultContainer = styled(motion.div)`

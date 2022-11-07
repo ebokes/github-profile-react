@@ -12,7 +12,7 @@ export const Error404 = styled.section`
 `;
 
 export const ErrorBoundarySection = styled(Section)`
-  height: 90vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
