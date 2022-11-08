@@ -32,18 +32,23 @@ export const SearchBar = styled(motion.div)`
     font-weight: 500;
     font-family: ${({ theme }) => theme.font.font1};
     line-height: 1;
-    color: ${({ theme }) => theme.color.primaryText};
 
     @media screen and (max-width: ${({ theme }) => theme.screens.xsm}) {
       font-size: 2.5rem;
     }
   }
 
+  p {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: ${({ theme }) => theme.color.primaryText};
+  }
+
   form {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
   }
 
   input {

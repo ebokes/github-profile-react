@@ -41,8 +41,11 @@ const Search = () => {
     <SearchSection>
       <Container>
         <Helmet>
-          <title>Search Github Users</title>
-          <meta name="description" content="Search for any Github profile" />
+          <title>Search Github Profile</title>
+          <meta
+            name="description"
+            content="Search for any Github user's profile"
+          />
           <link rel="canonical" href="/search" />
         </Helmet>
         <SearchContainer>
@@ -51,7 +54,8 @@ const Search = () => {
             transition={{ type: "tween", duration: 0.5 }}
             initial={{ scale: 0, opacity: 0 }}
           >
-            <h1>Enter name or Github username</h1>
+            <h1>Github Profile Finder</h1>
+            <p>Enter name or Github username</p>
             {/* Search Bar */}
             <form>
               <input
