@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 
 export const ContactSection = styled(Section)`
   background: linear-gradient(135deg, #00000080, #0000008e), url(${map});
+  background-color: #c3c4c626;
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -51,6 +53,7 @@ export const InputWrapper = styled.div`
     outline: none;
     color: ${({ theme }) => theme.color.white};
     font-family: ${({ theme }) => theme.font.font1};
+    border: none;
 
     @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
       width: 100%;
@@ -60,6 +63,17 @@ export const InputWrapper = styled.div`
       color: #fff;
       font-size: 1.6rem;
       font-weight: 500;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 35px #39393b inset !important;
+      box-shadow: 0 0 0 35px #39393b inset !important;
+    }
+    &:-webkit-autofill {
+      -webkit-text-fill-color: #fff !important;
     }
   }
 `;
