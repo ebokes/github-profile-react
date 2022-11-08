@@ -12,6 +12,10 @@ export const RepoContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 0.7rem;
+
+    &:last-child {
+      gap: 2rem;
+    }
   }
 
   a {

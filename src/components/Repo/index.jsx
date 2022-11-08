@@ -47,9 +47,16 @@ const Repo = () => {
             <span>
               <h3>Date Created:</h3> <p>{`${repos.created_at}`.slice(0, 10)}</p>
             </span>
-            <a href={repos.html_url} target="_blank">
-              View Repo
-            </a>
+            <span>
+              <a href={repos.html_url} target="_blank">
+                View Repo
+              </a>
+              {repos.homepage && (
+                <a href={repos.homepage} target="_blank">
+                  Live Demo
+                </a>
+              )}
+            </span>
           </div>
         )}
       </RepoContainer>

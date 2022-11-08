@@ -31,6 +31,12 @@ export const ErrorTestContainer = styled.div`
   background-position: left;
   background-size: cover;
   overflow: hidden;
+  min-height: calc(100vh - 7.85rem);
+  margin-bottom: -7.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   div {
     display: flex;
@@ -38,12 +44,11 @@ export const ErrorTestContainer = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 40rem;
+    /* height: 40rem; */
     gap: 3rem;
     font-family: "Exo", sans-serif;
     color: ${({ theme }) => theme.color.primaryText};
-    min-height: calc(100vh - 7.85rem);
-    margin-bottom: -7.85rem;
+
     max-width: 120rem;
     width: 90%;
     margin: 0 auto;
