@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { HiArrowNarrowLeft } from "react-icons/hi";
 import { useParams } from "react-router-dom";
-import { RepoContainer } from "./styles";
+import { Container } from "../reuseable";
+import { BackBtn, RepoContainer, RepoSection } from "./styles";
 
 const Repo = () => {
   const [repos, setRepos] = useState([]);
@@ -22,10 +24,14 @@ const Repo = () => {
   }, [params]);
 
   return (
-    <>
-      <RepoContainer>
-        {repos && (
+    <RepoSection>
+      <Container>
+        <RepoContainer>
+          <BackBtn to="/profile/allrepos">
+            <HiArrowNarrowLeft />
+          </BackBtn>
           <div>
+            <h2>Repository Details</h2>
             <span>
               <h3>Repo Name:</h3> <p>{repos.name}</p>
             </span>
@@ -58,9 +64,9 @@ const Repo = () => {
               )}
             </span>
           </div>
-        )}
-      </RepoContainer>
-    </>
+        </RepoContainer>
+      </Container>
+    </RepoSection>
   );
 };
 

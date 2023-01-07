@@ -6,7 +6,6 @@ import { Suspense } from "react";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Repo from "./components/Repo";
 import Loading from "./components/Loading";
 import ErrorPage from "./pages/Error/ErrorPage";
 import ErrorBoundary from "./pages/Error/ErrorBoundary";
@@ -15,6 +14,8 @@ let Home = lazy(() => import("./pages/Home"));
 let Search = lazy(() => import("./pages/Search"));
 let Contact = lazy(() => import("./pages/Contact"));
 let MyProfile = lazy(() => import("./pages/MyProfile"));
+let AllRepos = lazy(() => import("./components/AllRepos"));
+let Repo = lazy(() => import("./components/Repo"));
 
 function App() {
   const theme = {
@@ -56,9 +57,9 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/search" element={<Search />} />
-              <Route path="/profile" element={<MyProfile />}>
-                <Route path=":repoId" element={<Repo />} />
-              </Route>
+              <Route path="/profile" element={<MyProfile />} />
+              <Route path="/profile/allrepos" element={<AllRepos />} />
+              <Route path="profile/:repoId" element={<Repo />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/err-boundary" element={<ErrorBoundaryTest />} />
               <Route path="*" element={<ErrorPage />} />

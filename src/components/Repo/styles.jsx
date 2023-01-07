@@ -1,7 +1,33 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Section } from "../reuseable";
 
+export const RepoSection = styled(Section)`
+  min-height: calc(100vh - 7.85rem);
+  margin-bottom: -7.85rem;
+`;
+
+export const BackBtn = styled(Link)``;
 export const RepoContainer = styled.div`
   font-size: 1.6rem;
+  color: ${({ theme }) => theme.color.primaryText};
+  background-color: ${({ theme }) => theme.color.fg};
+  padding: 4rem;
+  max-width: 50rem;
+  margin: 0 auto;
+  font-family: ${({ theme }) => theme.font.font3};
+
+  @media screen and (max-width: ${({ theme }) => theme.screens.xsm}) {
+    padding: 4rem 1rem;
+  }
+
+  h2 {
+    text-align: center;
+    border-bottom: 2px solid ${({ theme }) => theme.color.secondaryText};
+    margin: 2rem auto;
+    /* display: inline-block; */
+    width: fit-content;
+  }
 
   h3 {
     display: inline-block;
