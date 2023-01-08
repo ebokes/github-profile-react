@@ -6,7 +6,7 @@ export const Error404 = styled.section`
   height: 100vh;
 
   h2 {
-    color: #000;
+    color: ${({ theme }) => theme.color.primaryText};
     font-family: ${({ theme }) => theme.font.font2};
   }
 `;

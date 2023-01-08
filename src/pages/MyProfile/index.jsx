@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { HiLink } from "react-icons/hi";
 import { BsGithub } from "react-icons/bs";
 import { GoLocation, GoVerified } from "react-icons/go";
@@ -17,25 +17,20 @@ import {
   ViewProfile,
 } from "./styles";
 import { Helmet } from "react-helmet-async";
-import { Outlet } from "react-router-dom";
 
 const MyProfile = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const apiCall = async () => {
+    const getProfileInfo = async () => {
       try {
         const res = await axios.get("https://api.github.com/users/ebokes");
         setData(res.data);
-        // const response = await axios.get(
-        //   "https://api.github.com/users/ebokes/repos"
-        // );
-        // setRepos(response.data);
       } catch (error) {
         console.error(error);
       }
     };
-    apiCall();
+    getProfileInfo();
   }, []);
 
   return (
@@ -113,9 +108,6 @@ const MyProfile = () => {
                 </Col2>
               </ProfileCard>
             </Row1>
-            {/* {toggleView && ( */}
-            <Outlet />
-            {/* )} */}
           </>
         ) : (
           <Loader />

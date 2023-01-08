@@ -10,7 +10,7 @@ const Repo = () => {
   const params = useParams();
 
   useEffect(() => {
-    const apiCall = async () => {
+    const getRepo = async () => {
       try {
         const res = await axios.get(
           `https://api.github.com/repositories/${params.repoId}`
@@ -20,7 +20,7 @@ const Repo = () => {
         console.log(error);
       }
     };
-    apiCall();
+    getRepo();
   }, [params]);
 
   return (
